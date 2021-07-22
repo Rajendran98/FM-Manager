@@ -1,36 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FmdashboardService } from './service/fmdashboard.service';
-import {Apollo , QueryRef} from 'apollo-angular';
-import gql from "graphql-tag";
-import { map, shareReplay } from 'rxjs/operators';
-import { Observable, of } from 'rxjs'
 
-
-export type devicemaster ={
-  DeviceID:Number;
+export type totalDataDevice={
+  TotalDeviceCount:Number
+  ReportingCount:Number
+  PacketACount:Number
+  PacketVCount:Number
+  NRDCount:Number
+  NDCount:Number
 }
 
-export type DataQuery ={
-  devicemaster:devicemaster[]
+export type totalDeviceType={
+  DeviceType:String
+  TotalDeviceCount:Number
+  ReportingCount:Number
+  PacketACount:Number
+  PacketVCount:Number
+  NRDCount:Number
+  NDCount:Number
 }
-
-export type devicepacket ={
-  ID:Number;
-}
-
-
-export type DataQuery1 ={
-  devicepacket:devicepacket[]
-}
-
-export type reportingstatus ={
-  ID:Number;
-}
-export type DataQuery2 ={
-  reportingstatus:reportingstatus[]
-}
-
 
 @Component({
   selector: 'app-fmdashboard',
@@ -38,54 +27,52 @@ export type DataQuery2 ={
   styleUrls: ['./fmdashboard.component.css']
 })
 export class FmdashboardComponent implements OnInit {
-  emp:object =[];
-  public TotalDevice;
-  public ReportStatus
-  public activepacket;
-  constructor(private router: Router,private apollo: Apollo, private FmdashboardService : FmdashboardService) { }
+  public entries= [];
+  public entries1:Object= [];
+  public totalData:totalDataDevice
+  public dataofSNM476:totalDeviceType
+  public dataofTAP66:totalDeviceType
+  public dataofTAP76:totalDeviceType
+  constructor(private router: Router, private FmdashboardService : FmdashboardService) { }
 
   ngOnInit(): void {
 
-    
-    const source$ = this.apollo.query<DataQuery>({
-      query: gql`
-      {
-        devicemaster {
-          DeviceID
-        }
-      }`
-      
-    }).pipe(shareReplay(1))
-
-source$.pipe(map(result => result.data && result.data.devicemaster)).subscribe((data) => this.TotalDevice = data.length);
-  
-const source1$ = this.apollo.query<DataQuery1>({
-  query: gql`
-  {
-    devicepacket {
-      ID
+    this.FmdashboardService.totalDeviceCount().subscribe(
+      data => { 
+        this.entries = data;          
+  function* entries(obj) {
+    for (let key of Object.keys(obj)) {
+      yield [key, obj[key]];
     }
-  }`
-  
-}).pipe(shareReplay(1))
+ }
 
-source1$.pipe(map(result => result.data && result.data.devicepacket)).subscribe((data) => this.ReportStatus = data.length);
-
-
-
-const source2$ = this.apollo.query<DataQuery2>({
-  query: gql`
-  {
-    reportingstatus {
-      ID
+ for (let [key1, value1] of entries(this.entries)) {
+ 
+    if(key1 == 'result'){
+     this.totalData = value1[0];
     }
-  }`
+
+  }
+ }) 
+
+ this.FmdashboardService.deviceTypeCount().subscribe(
+  data => { 
+    this.entries1 = data;          
+    function* entries1(obj) {
+      for (let key of Object.keys(obj)) {
+        yield [key, obj[key]];
+      }
+    }  
+    for (let [key1, value1] of entries1(this.entries1)) {
+ 
+      if(key1 == 'result'){
+        this.dataofSNM476 = value1[1]
+        this.dataofTAP66 = value1[2]
+        this.dataofTAP76 = value1[3]
+      }
   
-}).pipe(shareReplay(1))
-
-source2$.pipe(map(result => result.data && result.data.reportingstatus)).subscribe((data) => this.activepacket = data.length);
-
-
+    }
+  })
 
 }
 

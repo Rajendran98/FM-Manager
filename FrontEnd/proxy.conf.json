@@ -1,4 +1,12 @@
 {
+  "/api8": {
+    "target": "https://api-stg.trimble.com/t/trimble.com/oemdeviceinfo-api/1.0/firmware/dashboard?OEM=THC&searchBy=deviceType",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+    "^/api8": ""
+    }
+    },
   "/api7": {
     "target": "https://api-stg.trimble.com/t/trimble.com",
     "secure": true,
@@ -59,7 +67,7 @@
       },
       
       "/api": {
-      "target": "https://api-stg.trimble.com/t/trimble.com/osgoperations-api-dev/1.0/Dashboard/DeviceStatus?query=%7B%22Date%22:%222021-2-15%22,%22status%22:%22Total%22,%22OEMID%22:%221%22,%22start%22:%220%22,%22limit%22:10,%22DeviceType%22:%22TAP86%22%7D",
+      "target": "https://api-stg.trimble.com/t/trimble.com/oemdeviceinfo-api/1.0/firmware/dashboard?OEM=ALL&searchBy=total",
       "secure": true,
       "changeOrigin": true,
       "pathRewrite": {

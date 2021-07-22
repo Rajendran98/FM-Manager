@@ -13,5 +13,17 @@ export class FmdashboardService {
   constructor(private http: HttpClient,
     private _router: Router) { }
 
- 
+    totalDeviceCount() {
+      return this.http.get<any>(`${environment._fwdashboard}`).pipe(map(user => {
+       
+        return user;
+    }));
+    }
+
+    deviceTypeCount() {
+      return this.http.get<any>(`${environment._fwdashboardDeviceType}`).pipe(map(user => {
+       
+        return user;
+    }));
+    }
 }

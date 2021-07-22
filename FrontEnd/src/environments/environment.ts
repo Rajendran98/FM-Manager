@@ -12,6 +12,7 @@ export const environment = {
   _deviceWithPagination: "https://api-stg.trimble.com/t/trimble.com/oemdeviceinfo-api/1.0/deviceInfo/firmware",
   _firmwareUpload: "api1",
   _fwdashboard: "api",
+  _fwdashboardDeviceType: "api8",
   _dashboard: "api2",
   _publishVersion: "api3",
   _firmwareFileUpload: "api4",
