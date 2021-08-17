@@ -245,7 +245,7 @@ source1$.pipe(map(result => result.data && result.data.OtapCommand)).subscribe((
   
   
     changeTab(event) {
-     
+     console.log(event.index)
       this.tabIndex = event.index;
     }
 
@@ -474,7 +474,9 @@ source1$.pipe(map(result => result.data && result.data.OtapCommand)).subscribe((
        this.device = data.Device
        this.packetId = data.packetId
        this.deviceType = data.deviceType
+       console.log(this.json)
         let jsonObject = JSON.parse(this.json);
+        console.log(jsonObject)
        
         for (let country of Object.keys(jsonObject)) {
           var capital = jsonObject[country];
@@ -499,9 +501,9 @@ source1$.pipe(map(result => result.data && result.data.OtapCommand)).subscribe((
       if(this.deviceType != "SNM476"){
      if(addCommandForm.valid){
         let oops = JSON.stringify(addCommandForm.value)
-       
+        console.log(addCommandForm.value)
       //  console.log(oops) "NJ042612"
-        let objData = Object.assign({update: [{Device: "NG356545", DeviceID: 351431 , MessageFormat: oops, FirmwareUpgradeEnum: this.packetId , IOTDevice: "" , MessageName: this.messageName , AppInstanceID: null , DeviceGateway: "TDMG" , UserID: 2739}]});
+        let objData = Object.assign({OutboundMessage: [{DeviceId: this.device,PacketId: this.packetId,Name: this.messageName,Message: addCommandForm.value}]});
        
         this.UpgradecommandService.PublishedVersion(objData).pipe().subscribe(data=>{
            

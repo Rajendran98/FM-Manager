@@ -1,6 +1,14 @@
 {
+  "/api9": {
+    "target": "https://cloud.stage.api.trimblecloud.com/osg-frame/firmware-manager-api/2.0",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+    "^/api9": ""
+    }
+    },
   "/api8": {
-    "target": "https://api-stg.trimble.com/t/trimble.com/oemdeviceinfo-api/1.0/firmware/dashboard?OEM=THC&searchBy=deviceType",
+    "target": "https://cloud.stage.api.trimblecloud.com/osg-frame/deviceinfo-api/2.0/firmware/dashboard?OEM=THC&searchBy=deviceType",
     "secure": true,
     "changeOrigin": true,
     "pathRewrite": {
@@ -8,7 +16,7 @@
     }
     },
   "/api7": {
-    "target": "https://api-stg.trimble.com/t/trimble.com",
+    "target": "https://cloud.api.trimble.com/cloud/iot-ng/1.0/devices",
     "secure": true,
     "changeOrigin": true,
     "pathRewrite": {
@@ -16,7 +24,7 @@
     }
     },
   "/api6": {
-    "target": "https://identity-stg.trimble.com/token?grant_type=client_credentials",
+    "target": "https://stage.id.trimblecloud.com/oauth/token?grant_type=client_credentials",
     "secure": true,
     "changeOrigin": true,
     "pathRewrite": {
@@ -32,7 +40,7 @@
     }
     },
   "/api4": {
-    "target": "https://api.trimble.com/t/trimble.com/oem/2.0/fwmanagerapi/file/upload",
+    "target": "https://cloud.stage.api.trimblecloud.com/osg-frame/firmware-upload-api/2.0/fwmanagerapi/file/upload",
     "secure": true,
     "changeOrigin": true,
     "pathRewrite": {
@@ -40,7 +48,7 @@
     }
     },
   "/api3": {
-    "target": "https://api-stg.trimble.com/t/trimble.com/osgoperations-api-dev/1.0/Outbound/PublishOutbound",
+    "target": "https://cloud.stage.api.trimblecloud.com/osg-frame/outbound-api/2.0/outbound",
     "secure": true,
     "changeOrigin": true,
     "pathRewrite": {
@@ -58,7 +66,7 @@
 
     },
     "/api1": {
-        "target": "https://api-stg.trimble.com/t/trimble.com/osgoperations-api-dev/1.0/Outbound/Manage",
+        "target": "https://cloud.stage.api.trimblecloud.com/osg-frame/outbound-api/2.0/Outbound/Manage",
         "secure": true,
         "changeOrigin": true,
         "pathRewrite": {
@@ -67,7 +75,7 @@
       },
       
       "/api": {
-      "target": "https://api-stg.trimble.com/t/trimble.com/oemdeviceinfo-api/1.0/firmware/dashboard?OEM=ALL&searchBy=total",
+      "target": "https://cloud.stage.api.trimblecloud.com/osg-frame/deviceinfo-api/2.0/firmware/dashboard?OEM=ALL&searchBy=total",
       "secure": true,
       "changeOrigin": true,
       "pathRewrite": {

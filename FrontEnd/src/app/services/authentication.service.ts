@@ -27,7 +27,8 @@ export class AuthenticationService {
     loginUser(loginData) {
       let headers = new HttpHeaders({
         'Content-Type': 'application/x-www-form-urlencoded',
-            'Authorization': 'Basic OW5TSmdlR0ZlZnJ0blJWNEhMSkttTWZ5V3lBYTptWmViWEJkZ2dQUHh0RFk1NDhYWWdIeFZvajhh',}); //Graph QL
+        'Authorization': 'Basic NGRmMGNjODEtMGYxYi00YmEyLTlkM2YtYzk4OWFhZDYxZGNiOjNkZDk1ZTFiZTQ4MTQ3ZjdiMDRhNzc3ZjUwZWU3MGI2',}); //Graph QL
+   //    'Authorization': 'Basic OW5TSmdlR0ZlZnJ0blJWNEhMSkttTWZ5V3lBYTptWmViWEJkZ2dQUHh0RFk1NDhYWWdIeFZvajhh',}); //Graph QL
       //  'Authorization': 'Basic V2ZJNjlCSVN4NlhzcVB2UVJrRFlJZTVZU3lRYTpmMVhBcjFrVmdkQW00a01mU1lNYzNNQUdtaUlh'}); //single device search
     //  'Authorization': 'Basic dzhxZTYxaTZrT0J5MVFobE5PUUVodGRLOUpzYTpYcFdEVVF4R3hfd2ZFb25EeGw4REhJN2s0Y0Fh'});    //C and java firmware upload          
         // 'Authorization': 'Basic aHdmaXRqQlQ1bGVvWm9qeFZ4SzRnMlpwM0FFYTpNMDYzbDdZSk5TRzBrUVBwS3BKVEVDcmNPNElh'}); // Upload Firmware

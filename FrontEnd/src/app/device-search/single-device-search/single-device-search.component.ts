@@ -315,7 +315,7 @@ toggleRow(row: any, index: number) {
   this.selection.toggle(row);
  
   for (const [key, value] of Object.entries(row)) {
-    if(key == "deviceId")
+    if(key == "deviceid")
     {
       this.Device = value
      

@@ -68,6 +68,10 @@
     font-weight: 600;
 }
 
+.uploader-status {
+    margin-top: 10%;
+    text-align: -webkit-center;
+  }
 
 @media only screen and (max-width:768px) {
     .mainpg{

@@ -124,7 +124,7 @@ export class OutboundStatusComponent implements OnInit , AfterViewInit , AfterCo
   
   
     changeTab(event) {
-     
+     console.log(event.index)
       this.tabIndex = event.index;
      
     }

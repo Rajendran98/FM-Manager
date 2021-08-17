@@ -33,6 +33,7 @@ export class FmdashboardComponent implements OnInit {
   public dataofSNM476:totalDeviceType
   public dataofTAP66:totalDeviceType
   public dataofTAP76:totalDeviceType
+  loadingFlag = true;
   constructor(private router: Router, private FmdashboardService : FmdashboardService) { }
 
   ngOnInit(): void {
@@ -53,6 +54,7 @@ export class FmdashboardComponent implements OnInit {
     }
 
   }
+  this.loadingFlag = false
  }) 
 
  this.FmdashboardService.deviceTypeCount().subscribe(

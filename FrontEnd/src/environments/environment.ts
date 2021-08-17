@@ -7,9 +7,9 @@ export const environment = {
   _loginUrl : "api5",//Outbound,Upload Firmware
   _loginStg: "api6",//single Device search,GQL
   _loginProdUrl: "https://identity-stg.trimble.com/token?grant_type=client_credentials&amp;scope=openid", //Other OTAP Command , Upolad C and Java
-  _outboundapi : "https://api.trimble.com/t/trimble.com/oem-devicegateway/1.0/outbound/NH519298?limit=10&page=1&sort=desc",
-  _multipleDeviceapi: "https://api.trimble.com/t/trimble.com/oem-devicegateway/1.0/outbound/messages",
-  _deviceWithPagination: "https://api-stg.trimble.com/t/trimble.com/oemdeviceinfo-api/1.0/deviceInfo/firmware",
+  _outboundapi : "https://cloud.stage.api.trimblecloud.com/osg-frame/outbound-api/2.0/outbound/NH519298?limit=10&page=1&sort=desc",
+  _multipleDeviceapi: "https://cloud.stage.api.trimblecloud.com/osg-frame/outbound-api/2.0/outbound/messages",
+  _deviceWithPagination: "https://cloud.stage.api.trimblecloud.com/osg-frame/deviceinfo-api/2.0/deviceInfo/firmware",
   _firmwareUpload: "api1",
   _fwdashboard: "api",
   _fwdashboardDeviceType: "api8",
@@ -17,7 +17,8 @@ export const environment = {
   _publishVersion: "api3",
   _firmwareFileUpload: "api4",
   _deviceOutbound: "api7",
-  _getDevice: "https://api-stg.trimble.com/t/trimble.com/iot-stg/1.0/shadow/46952541-3269-45fb-9f93-386bbe17372d-SNM00030"
+  _graphQLStg:"api9",
+  _getDevice: "https://cloud.api.trimble.com/cloud/iot-ng/1.0/devices/shadow/46952541-3269-45fb-9f93-386bbe17372d-SNM00030"
   
 };
 

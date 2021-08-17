@@ -54,6 +54,7 @@ import { GraphQLModule } from './graphql.module';
 import {MatDialogModule} from '@angular/material/dialog';
 import {addCommand} from './other-otap-command/other-otap-command.component'
 import {flashFirmware} from './other-otap-command/other-otap-command.component'
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -109,7 +110,8 @@ import {flashFirmware} from './other-otap-command/other-otap-command.component'
     MatProgressSpinnerModule,
     MatSnackBarModule,
     GraphQLModule,
-    MatDialogModule
+    MatDialogModule,
+    ReactiveFormsModule
 
   ],
   entryComponents: [addCommand,flashFirmware],

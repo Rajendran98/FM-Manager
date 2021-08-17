@@ -6,8 +6,11 @@
         </div>
     </div>
 </div>
+<div *ngIf="loadingFlag" class="uploader-status">
+    <mat-spinner></mat-spinner>
+</div>
 
-<div class="container-fluid mainpg">
+<div *ngIf="!loadingFlag" class="container-fluid mainpg">
     <div class="row">
         <div class="col-sm-6 col-lg-4" >
             <mat-card class="imgs" >
