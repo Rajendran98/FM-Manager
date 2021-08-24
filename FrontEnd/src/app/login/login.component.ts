@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
       .subscribe(
         res => {
           localStorage.setItem('token', res.access_token)
+          setTimeout(() =>  location.reload(),100)
           this.router.navigate(['customerselection']);
         },
         err => console.log(err)

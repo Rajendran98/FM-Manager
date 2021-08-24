@@ -52,6 +52,7 @@ showDiv:boolean=false;
 
 
 ngOnInit(): void {
+    
 const source$ = this.apollo.query
 <DataQuery>
 ({

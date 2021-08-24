@@ -48,7 +48,7 @@
     }
     },
   "/api3": {
-    "target": "https://cloud.stage.api.trimblecloud.com/osg-frame/outbound-api/2.0/outbound",
+    "target": "https://cloud.stage.api.trimblecloud.com/osg-frame/outbound-api/2.0/outbound/PublishOutbound",
     "secure": true,
     "changeOrigin": true,
     "pathRewrite": {
