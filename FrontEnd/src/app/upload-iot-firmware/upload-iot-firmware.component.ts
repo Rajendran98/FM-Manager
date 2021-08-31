@@ -62,13 +62,14 @@ export class UploadIotFirmwareComponent implements OnInit {
      
       let formData:FormData = new FormData(); 
       formData.append('file', this.fileToUpload); 
-      formData.append('folder', '/otap/otap_usr/OTAP');
+      formData.append('user_type', 'snm-user');
+      formData.append('releaseNotes', 'New Firmware Release for SNM476');
        console.log(formData)
       this.ServicesService.uploadFirmware(formData).pipe().subscribe(data =>
       {
-        this._snackBar.open( data ,"",{duration: 2000});
+        this._snackBar.open( "FIle Uploaded Successfully" ,"",{duration: 2000});
         console.log(data)
-        if(data == "file uploaded.")
+        if(data)
         this.postData();
        
       },

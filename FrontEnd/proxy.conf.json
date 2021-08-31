@@ -40,7 +40,7 @@
     }
     },
   "/api4": {
-    "target": "https://cloud.stage.api.trimblecloud.com/osg-frame/firmware-upload-api/2.0/fwmanagerapi/file/upload",
+    "target": "https://cloud.stage.api.trimblecloud.com/osg-frame/firmware-upload-api/2.0/snm/upload",
     "secure": true,
     "changeOrigin": true,
     "pathRewrite": {
